@@ -1,39 +1,90 @@
 // ===========================
+// Configuration
+// ===========================
+const CONFIG = {
+    scrollThreshold: 100,
+    navbarOffset: 80,
+    observerThreshold: 0.1,
+    messageTimeout: 5000,
+    parallaxSpeed: 0.5,
+    formSubmitDelay: 1500
+};
+
+// ===========================
+// DOM Element Cache
+// ===========================
+const DOM = {
+    hamburger: document.querySelector('.hamburger'),
+    navMenu: document.querySelector('.nav-menu'),
+    navLinks: document.querySelectorAll('.nav-link'),
+    navbar: document.querySelector('.navbar'),
+    sections: document.querySelectorAll('section[id]'),
+    hero: document.querySelector('.hero'),
+    contactForm: document.getElementById('contactForm'),
+    formMessage: document.getElementById('formMessage')
+};
+
+// ===========================
 // Mobile Menu Toggle
 // ===========================
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+DOM.hamburger.addEventListener('click', () => {
+    DOM.hamburger.classList.toggle('active');
+    DOM.navMenu.classList.toggle('active');
 });
 
 // Close menu when clicking on a link
-navLinks.forEach(link => {
+DOM.navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        DOM.hamburger.classList.remove('active');
+        DOM.navMenu.classList.remove('active');
     });
 });
 
 // ===========================
-// Navbar Scroll Effect
+// Consolidated Scroll Handler
 // ===========================
-const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
+// Helper function: Update navbar style based on scroll position
+function updateNavbarStyle(scrollY) {
+    if (scrollY > CONFIG.scrollThreshold) {
+        DOM.navbar.style.padding = '15px 0';
+        DOM.navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        DOM.navbar.style.padding = '20px 0';
+        DOM.navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+    }
+}
+
+// Helper function: Update active navigation link
+function updateActiveNavLink(scrollY) {
+    DOM.sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - CONFIG.scrollThreshold;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            DOM.navLinks.forEach(link => link.classList.remove('active-nav'));
+            if (navLink) navLink.classList.add('active-nav');
+        }
+    });
+}
+
+// Helper function: Apply parallax effect to hero section
+function applyParallaxEffect(scrollY) {
+    if (DOM.hero && scrollY < DOM.hero.offsetHeight) {
+        DOM.hero.style.transform = `translateY(${scrollY * CONFIG.parallaxSpeed}px)`;
+    }
+}
+
+// Single consolidated scroll event listener
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > 100) {
-        navbar.style.padding = '15px 0';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.padding = '20px 0';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
-    }
+    updateNavbarStyle(currentScroll);
+    updateActiveNavLink(currentScroll);
+    applyParallaxEffect(currentScroll);
 
     lastScroll = currentScroll;
 });
@@ -47,7 +98,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
 
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = target.offsetTop - CONFIG.navbarOffset;
 
             window.scrollTo({
                 top: offsetTop,
@@ -61,7 +112,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Scroll Reveal Animation
 // ===========================
 const observerOptions = {
-    threshold: 0.1,
+    threshold: CONFIG.observerThreshold,
     rootMargin: '0px 0px -100px 0px'
 };
 
@@ -89,10 +140,31 @@ animateOnScroll.forEach(el => {
 // ===========================
 // Contact Form Handling
 // ===========================
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', async (e) => {
+// Helper function: Set submit button state
+function setSubmitButtonState(button, isSubmitting) {
+    button.disabled = isSubmitting;
+    button.textContent = isSubmitting ? 'Gönderiliyor...' : 'Gönder';
+}
+
+// Helper function: Validate email format
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Helper function: Show form message
+function showMessage(message, type) {
+    DOM.formMessage.textContent = message;
+    DOM.formMessage.className = `form-message ${type}`;
+
+    setTimeout(() => {
+        DOM.formMessage.className = 'form-message';
+    }, CONFIG.messageTimeout);
+}
+
+// Main form submission handler
+DOM.contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Get form data
@@ -103,79 +175,38 @@ contactForm.addEventListener('submit', async (e) => {
         message: document.getElementById('message').value
     };
 
-    // Basic validation
+    // Validate all fields are filled
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
         showMessage('Lütfen tüm alanları doldurun.', 'error');
         return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    // Validate email format
+    if (!isValidEmail(formData.email)) {
         showMessage('Geçerli bir e-posta adresi girin.', 'error');
         return;
     }
 
-    // Simulate form submission (replace with actual API call)
+    const submitBtn = DOM.contactForm.querySelector('button[type="submit"]');
+
     try {
-        // Disable submit button
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Gönderiliyor...';
+        setSubmitButtonState(submitBtn, true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Simulate API call (replace with actual API endpoint in production)
+        await new Promise(resolve => setTimeout(resolve, CONFIG.formSubmitDelay));
 
-        // Show success message
+        // Show success message and reset form
         showMessage('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.', 'success');
-        contactForm.reset();
-
-        // Re-enable submit button
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Gönder';
+        DOM.contactForm.reset();
 
         // Log form data (in production, this would be sent to a server)
         console.log('Form Data:', formData);
 
     } catch (error) {
         showMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.', 'error');
-
-        // Re-enable submit button
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Gönder';
+    } finally {
+        setSubmitButtonState(submitBtn, false);
     }
-});
-
-function showMessage(message, type) {
-    formMessage.textContent = message;
-    formMessage.className = `form-message ${type}`;
-
-    // Hide message after 5 seconds
-    setTimeout(() => {
-        formMessage.className = 'form-message';
-    }, 5000);
-}
-
-// ===========================
-// Active Navigation Link on Scroll
-// ===========================
-const sections = document.querySelectorAll('section[id]');
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active-nav'));
-            if (navLink) navLink.classList.add('active-nav');
-        }
-    });
 });
 
 // ===========================
@@ -190,20 +221,6 @@ portfolioItems.forEach(item => {
 });
 
 // ===========================
-// Parallax Effect on Hero Section (subtle)
-// ===========================
-const hero = document.querySelector('.hero');
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxSpeed = 0.5;
-
-    if (hero && scrolled < hero.offsetHeight) {
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-    }
-});
-
-// ===========================
 // Page Load Animation
 // ===========================
 window.addEventListener('load', () => {
@@ -214,19 +231,5 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
-
-// ===========================
-// Add active class styling for nav
-// ===========================
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active-nav {
-        color: var(--primary-color);
-    }
-    .nav-link.active-nav::after {
-        width: 100%;
-    }
-`;
-document.head.appendChild(style);
 
 console.log('Portfolio website initialized successfully! ✨');
