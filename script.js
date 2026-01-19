@@ -1,4 +1,9 @@
 // ===========================
+// Ben Dilek - Tur Rehberi Portfolio
+// JavaScript Functionality
+// ===========================
+
+// ===========================
 // Mobile Menu Toggle
 // ===========================
 const hamburger = document.querySelector('.hamburger');
@@ -28,11 +33,11 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > 100) {
-        navbar.style.padding = '15px 0';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        navbar.style.padding = '12px 0';
+        navbar.style.boxShadow = '0 4px 30px rgba(44, 24, 16, 0.12)';
     } else {
-        navbar.style.padding = '20px 0';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+        navbar.style.padding = '18px 0';
+        navbar.style.boxShadow = '0 2px 20px rgba(44, 24, 16, 0.08)';
     }
 
     lastScroll = currentScroll;
@@ -47,7 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
 
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = target.offsetTop - 80;
 
             window.scrollTo({
                 top: offsetTop,
@@ -76,7 +81,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Elements to animate on scroll
 const animateOnScroll = document.querySelectorAll(
-    '.service-card, .portfolio-item, .stat-item, .about-text, .contact-content'
+    '.service-card, .tour-card, .stat-item, .about-content, .contact-content'
 );
 
 animateOnScroll.forEach(el => {
@@ -92,69 +97,70 @@ animateOnScroll.forEach(el => {
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone')?.value || '',
+            tour: document.getElementById('tour')?.value || '',
+            message: document.getElementById('message').value
+        };
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-        showMessage('Lütfen tüm alanları doldurun.', 'error');
-        return;
-    }
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.message) {
+            showMessage('Lutfen gerekli alanlari doldurun.', 'error');
+            return;
+        }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-        showMessage('Geçerli bir e-posta adresi girin.', 'error');
-        return;
-    }
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            showMessage('Gecerli bir e-posta adresi girin.', 'error');
+            return;
+        }
 
-    // Simulate form submission (replace with actual API call)
-    try {
-        // Disable submit button
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Gönderiliyor...';
+        // Simulate form submission
+        try {
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Gonderiliyor...';
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
-        // Show success message
-        showMessage('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.', 'success');
-        contactForm.reset();
+            // Show success message
+            showMessage('Mesajiniz basariyla gonderildi! En kisa surede size donus yapacagim.', 'success');
+            contactForm.reset();
 
-        // Re-enable submit button
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Gönder';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Mesaj Gonder';
 
-        // Log form data (in production, this would be sent to a server)
-        console.log('Form Data:', formData);
+            // Log form data
+            console.log('Form Data:', formData);
 
-    } catch (error) {
-        showMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.', 'error');
+        } catch (error) {
+            showMessage('Bir hata olustu. Lutfen daha sonra tekrar deneyin.', 'error');
 
-        // Re-enable submit button
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Gönder';
-    }
-});
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Mesaj Gonder';
+        }
+    });
+}
 
 function showMessage(message, type) {
-    formMessage.textContent = message;
-    formMessage.className = `form-message ${type}`;
+    if (formMessage) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
 
-    // Hide message after 5 seconds
-    setTimeout(() => {
-        formMessage.className = 'form-message';
-    }, 5000);
+        setTimeout(() => {
+            formMessage.className = 'form-message';
+        }, 5000);
+    }
 }
 
 // ===========================
@@ -179,27 +185,81 @@ window.addEventListener('scroll', () => {
 });
 
 // ===========================
-// Portfolio Item Hover Effect Enhancement
+// Tour Card Hover Effects
 // ===========================
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+const tourCards = document.querySelectorAll('.tour-card');
 
-portfolioItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
+tourCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
         this.style.transition = 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
     });
 });
 
 // ===========================
-// Parallax Effect on Hero Section (subtle)
+// Service Card Hover Effects
+// ===========================
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
+    });
+});
+
+// ===========================
+// Stat Counter Animation
+// ===========================
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const animateCounter = (el) => {
+    const text = el.textContent;
+    const hasPlus = text.includes('+');
+    const hasStar = text.includes('★');
+    const number = parseInt(text.replace(/[^0-9]/g, ''));
+
+    if (isNaN(number)) return;
+
+    let current = 0;
+    const increment = number / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= number) {
+            current = number;
+            clearInterval(timer);
+        }
+        let display = Math.floor(current);
+        if (hasPlus) display += '+';
+        if (hasStar) display += '★';
+        el.textContent = display;
+    }, 30);
+};
+
+const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            statObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(stat => statObserver.observe(stat));
+
+// ===========================
+// Parallax Effect on Hero Section
 // ===========================
 const hero = document.querySelector('.hero');
 
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const parallaxSpeed = 0.5;
+    const parallaxSpeed = 0.3;
 
     if (hero && scrolled < hero.offsetHeight) {
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        const heroContent = hero.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+            heroContent.style.opacity = 1 - (scrolled / hero.offsetHeight);
+        }
     }
 });
 
@@ -229,4 +289,17 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-console.log('Portfolio website initialized successfully! ✨');
+// ===========================
+// WhatsApp Button Pulse Animation
+// ===========================
+const whatsappFloat = document.querySelector('.whatsapp-float');
+if (whatsappFloat) {
+    setInterval(() => {
+        whatsappFloat.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            whatsappFloat.style.transform = 'scale(1)';
+        }, 300);
+    }, 3000);
+}
+
+console.log('Ben Dilek - Tur Rehberi Portfolio initialized successfully!');
