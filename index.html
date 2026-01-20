@@ -3,73 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gülistan Yavuz - WordPress Web Tasarım, Sosyal Medya Reklamları ve Grafik Tasarım Uzmanı">
-    <title>Gülistan Yavuz | WordPress & Dijital Tasarım Uzmanı</title>
+    <meta name="description" content="ESL Dijital - Profesyonel Web Tasarım, SEO, Dijital Pazarlama ve Sosyal Medya Yönetimi Hizmetleri. Markanızı dijital dünyada büyütüyoruz.">
+    <meta name="keywords" content="dijital ajans, web tasarım, seo, dijital pazarlama, sosyal medya, istanbul">
+    <meta name="author" content="ESL Dijital">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ESL Dijital | Dijital Pazarlama Ajansı">
+    <meta property="og:description" content="Profesyonel dijital çözümlerle markanızı büyütüyoruz.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+
+    <title>ESL Dijital | Profesyonel Dijital Pazarlama Ajansı</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <span class="loader-text">ESL</span>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#" class="logo">GY</a>
-            <ul class="nav-menu">
-                <li><a href="#hakkimda" class="nav-link">Hakkımda</a></li>
+            <a href="#" class="logo">
+                <span class="logo-text">ESL</span>
+                <span class="logo-sub">dijital</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#anasayfa" class="nav-link active">Ana Sayfa</a></li>
                 <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
+                <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
                 <li><a href="#projeler" class="nav-link">Projeler</a></li>
-                <li><a href="#iletisim" class="nav-link cta-btn">İletişim</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#iletisim" class="nav-link nav-cta">İletişim</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Menü">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="anasayfa" class="hero">
+        <div class="hero-bg">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Merhaba, Ben <span class="highlight">Gülistan Yavuz</span></h1>
-                <p class="hero-subtitle">WordPress Web Tasarım & Dijital Pazarlama Uzmanı</p>
-                <p class="hero-description">2 yıldır profesyonel olarak WordPress web siteleri, sosyal medya reklamları ve grafik tasarım hizmetleri sunuyorum. Elementor ile modern ve işlevsel tasarımlar oluşturuyorum.</p>
+                <div class="hero-badge">
+                    <span class="badge-icon">★</span>
+                    <span>Türkiye'nin Güvenilir Dijital Ajansı</span>
+                </div>
+                <h1 class="hero-title">
+                    Dijital Dünyada<br>
+                    <span class="gradient-text">Markanızı Büyütüyoruz</span>
+                </h1>
+                <p class="hero-description">
+                    Web tasarım, SEO, sosyal medya yönetimi ve dijital pazarlama çözümleriyle
+                    işletmenizi bir adım öne taşıyoruz. Sonuç odaklı stratejilerle büyümenize katkı sağlıyoruz.
+                </p>
                 <div class="hero-buttons">
-                    <a href="#projeler" class="btn btn-primary">Projelerimi İncele</a>
-                    <a href="#iletisim" class="btn btn-secondary">İletişime Geç</a>
+                    <a href="#hizmetler" class="btn btn-primary">
+                        <span>Hizmetlerimiz</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#iletisim" class="btn btn-outline">
+                        <span>Ücretsiz Danışmanlık</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="150">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Tamamlanan Proje</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Mutlu Müşteri</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="98">0</span>
+                        <span class="stat-plus">%</span>
+                        <span class="stat-label">Memnuniyet</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="hakkimda" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Hakkımda</span>
-                <h2 class="section-title">Profesyonel Dijital Çözümler</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>2 yıldır farklı sektörlerden müşterilerle çalışarak, onların dijital varlıklarını güçlendiriyorum. WordPress ve Elementor konusundaki uzmanlığımla, hem estetik hem de işlevsel web siteleri tasarlıyorum.</p>
-                    <p>Her proje için özel çözümler üreterek, müşterilerimin hedef kitlelerine en etkili şekilde ulaşmalarını sağlıyorum.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number">2+</h3>
-                            <p class="stat-label">Yıl Deneyim</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">50+</h3>
-                            <p class="stat-label">Tamamlanan Proje</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">100%</h3>
-                            <p class="stat-label">Müşteri Memnuniyeti</p>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <div class="floating-card card-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <span>Web Tasarım</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                        <span>SEO</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span>Reklam</span>
+                    </div>
+                    <div class="hero-main-visual">
+                        <div class="visual-gradient"></div>
+                        <div class="visual-content">
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="browser-content">
+                                    <div class="mock-nav"></div>
+                                    <div class="mock-hero"></div>
+                                    <div class="mock-cards">
+                                        <div class="mock-card"></div>
+                                        <div class="mock-card"></div>
+                                        <div class="mock-card"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Aşağı Kaydır</span>
+            <div class="scroll-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -78,63 +163,328 @@
     <section id="hizmetler" class="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Hizmetler</span>
-                <h2 class="section-title">Sunduğum Hizmetler</h2>
+                <span class="section-badge">Hizmetlerimiz</span>
+                <h2 class="section-title">Dijital Çözümlerimiz</h2>
+                <p class="section-description">
+                    İşletmenizin ihtiyaçlarına özel, sonuç odaklı dijital hizmetler sunuyoruz.
+                </p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <!-- Service 1 -->
+                <article class="service-card" data-aos="fade-up">
                     <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">WordPress Web Siteleri</h3>
-                    <p class="service-description">Elementor ile profesyonel, responsive ve SEO uyumlu web siteleri tasarlıyorum. E-ticaret, kurumsal ve kişisel blog siteleri.</p>
+                    <div class="service-number">01</div>
+                    <h3 class="service-title">Web Tasarım & Geliştirme</h3>
+                    <p class="service-description">
+                        Modern, responsive ve SEO uyumlu web siteleri tasarlıyoruz.
+                        WordPress, özel kodlama ve e-ticaret çözümleri.
+                    </p>
                     <ul class="service-features">
-                        <li>Özel Elementor Tasarımları</li>
-                        <li>Responsive & Mobil Uyumlu</li>
-                        <li>SEO Optimizasyonu</li>
-                        <li>Hız Optimizasyonu</li>
+                        <li>Kurumsal Web Siteleri</li>
+                        <li>E-Ticaret Sistemleri</li>
+                        <li>Landing Page Tasarımı</li>
+                        <li>Web Uygulama Geliştirme</li>
                     </ul>
-                </div>
+                    <a href="#iletisim" class="service-link">
+                        <span>Detaylı Bilgi</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </article>
 
-                <div class="service-card">
+                <!-- Service 2 -->
+                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                            <path d="M11 8v6M8 11h6"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Sosyal Medya Meta Reklamları</h3>
-                    <p class="service-description">Facebook ve Instagram reklamlarınızı planlıyor, hedef kitle analizi yapıyor ve kampanyalarınızı yönetiyorum.</p>
+                    <div class="service-number">02</div>
+                    <h3 class="service-title">SEO & Arama Motoru Optimizasyonu</h3>
+                    <p class="service-description">
+                        Google'da üst sıralara çıkmanızı sağlıyoruz. Organik trafik artışı
+                        ve kalıcı görünürlük için kapsamlı SEO hizmetleri.
+                    </p>
                     <ul class="service-features">
-                        <li>Hedef Kitle Analizi</li>
-                        <li>Reklam Kampanya Yönetimi</li>
-                        <li>Performans Takibi</li>
-                        <li>ROI Optimizasyonu</li>
+                        <li>Teknik SEO Analizi</li>
+                        <li>İçerik Optimizasyonu</li>
+                        <li>Backlink Stratejisi</li>
+                        <li>Yerel SEO</li>
                     </ul>
-                </div>
+                    <a href="#iletisim" class="service-link">
+                        <span>Detaylı Bilgi</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </article>
 
-                <div class="service-card">
+                <!-- Service 3 -->
+                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                            <path d="M2 2l7.586 7.586"></path>
-                            <circle cx="11" cy="11" r="2"></circle>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Grafik Tasarım</h3>
-                    <p class="service-description">Broşür, kartvizit ve diğer kurumsal kimlik materyalleri tasarlıyorum. Markanıza değer katan profesyonel tasarımlar.</p>
+                    <div class="service-number">03</div>
+                    <h3 class="service-title">Sosyal Medya Yönetimi</h3>
+                    <p class="service-description">
+                        Markanızın sosyal medya varlığını profesyonelce yönetiyoruz.
+                        İçerik üretimi, takipçi artışı ve etkileşim stratejileri.
+                    </p>
                     <ul class="service-features">
-                        <li>Broşür Tasarımı</li>
-                        <li>Kartvizit Tasarımı</li>
-                        <li>Sosyal Medya Görselleri</li>
-                        <li>Kurumsal Kimlik</li>
+                        <li>İçerik Planlama & Üretim</li>
+                        <li>Topluluk Yönetimi</li>
+                        <li>Influencer Marketing</li>
+                        <li>Analiz & Raporlama</li>
                     </ul>
+                    <a href="#iletisim" class="service-link">
+                        <span>Detaylı Bilgi</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="service-number">04</div>
+                    <h3 class="service-title">Dijital Reklam Yönetimi</h3>
+                    <p class="service-description">
+                        Google Ads, Meta (Facebook/Instagram) ve diğer platformlarda
+                        yüksek dönüşüm oranına sahip reklam kampanyaları yönetiyoruz.
+                    </p>
+                    <ul class="service-features">
+                        <li>Google Ads Yönetimi</li>
+                        <li>Meta Reklam Kampanyaları</li>
+                        <li>Remarketing Stratejileri</li>
+                        <li>Performans Optimizasyonu</li>
+                    </ul>
+                    <a href="#iletisim" class="service-link">
+                        <span>Detaylı Bilgi</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Service 5 -->
+                <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                        </svg>
+                    </div>
+                    <div class="service-number">05</div>
+                    <h3 class="service-title">Marka & Kurumsal Kimlik</h3>
+                    <p class="service-description">
+                        Logo tasarımından kurumsal kimlik setlerine kadar markanızın
+                        görsel kimliğini profesyonelce oluşturuyoruz.
+                    </p>
+                    <ul class="service-features">
+                        <li>Logo Tasarımı</li>
+                        <li>Kurumsal Kimlik Seti</li>
+                        <li>Marka Kılavuzu</li>
+                        <li>Ambalaj Tasarımı</li>
+                    </ul>
+                    <a href="#iletisim" class="service-link">
+                        <span>Detaylı Bilgi</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Service 6 -->
+                <article class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <div class="service-number">06</div>
+                    <h3 class="service-title">E-Ticaret Çözümleri</h3>
+                    <p class="service-description">
+                        Online satış platformunuzu kuruyor, yönetim ve pazarlama
+                        süreçlerinizi optimize ediyoruz.
+                    </p>
+                    <ul class="service-features">
+                        <li>E-Ticaret Site Kurulumu</li>
+                        <li>Pazaryeri Entegrasyonları</li>
+                        <li>Ödeme Sistemleri</li>
+                        <li>Stok & Sipariş Yönetimi</li>
+                    </ul>
+                    <a href="#iletisim" class="service-link">
+                        <span>Detaylı Bilgi</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="hakkimizda" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-badge">Hakkımızda</span>
+                    <h2 class="section-title">Dijital Başarınız İçin Yanınızdayız</h2>
+                    <p class="about-text">
+                        ESL Dijital olarak, 5 yılı aşkın deneyimimizle işletmelerin dijital
+                        dönüşümüne liderlik ediyoruz. Stratejik düşünce yapımız ve yaratıcı
+                        yaklaşımımızla markanızı rakiplerinizden bir adım öne taşıyoruz.
+                    </p>
+                    <p class="about-text">
+                        Müşteri odaklı çalışma prensibimiz ve sonuç garantili projelerimizle
+                        sektörde güvenilir bir iş ortağı olarak konumlandık.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Sonuç Odaklı</h4>
+                                <p>Ölçülebilir hedefler ve somut sonuçlar</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Uzman Ekip</h4>
+                                <p>Alanında deneyimli profesyoneller</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>7/24 Destek</h4>
+                                <p>Kesintisiz müşteri hizmetleri</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#iletisim" class="btn btn-primary">
+                        <span>Bize Ulaşın</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <div class="image-placeholder">
+                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>Ekibimiz</span>
+                            </div>
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-number">5+</span>
+                            <span class="exp-text">Yıllık Deneyim</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="150">0</span>
+                        <span class="stat-label">Tamamlanan Proje</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Mutlu Müşteri</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="98">0</span>
+                        <span class="stat-percent">%</span>
+                        <span class="stat-label">Müşteri Memnuniyeti</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Yıllık Tecrübe</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,92 +494,393 @@
     <section id="projeler" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Projeler</span>
-                <h2 class="section-title">Son Projelerim</h2>
+                <span class="section-badge">Projelerimiz</span>
+                <h2 class="section-title">Son Çalışmalarımız</h2>
+                <p class="section-description">
+                    Farklı sektörlerden başarılı projelerimizi inceleyin.
+                </p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="web">Web Tasarım</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Ticaret</button>
+                <button class="filter-btn" data-filter="branding">Marka Kimlik</button>
+                <button class="filter-btn" data-filter="digital">Dijital Pazarlama</button>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <!-- Project 1 -->
+                <article class="portfolio-item" data-category="web">
                     <div class="portfolio-image">
-                        <div class="placeholder-image">WordPress Sitesi</div>
+                        <div class="image-placeholder-project">
+                            <span>Web Tasarım Projesi</span>
+                        </div>
                         <div class="portfolio-overlay">
-                            <h4>E-Ticaret Sitesi</h4>
-                            <p>WordPress + WooCommerce</p>
+                            <div class="overlay-content">
+                                <span class="project-category">Web Tasarım</span>
+                                <h3 class="project-title">Kurumsal Web Sitesi</h3>
+                                <p class="project-desc">Modern ve responsive kurumsal web sitesi tasarımı</p>
+                                <a href="#" class="project-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">WordPress</span>
-                        <h3>Online Mağaza</h3>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-project">
+                            <span>E-Ticaret Projesi</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">E-Ticaret</span>
+                                <h3 class="project-title">Online Mağaza</h3>
+                                <p class="project-desc">Tam entegreli e-ticaret platformu</p>
+                                <a href="#" class="project-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-project">
+                            <span>Marka Kimlik Projesi</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">Marka Kimlik</span>
+                                <h3 class="project-title">Kurumsal Kimlik</h3>
+                                <p class="project-desc">Logo ve kurumsal kimlik seti tasarımı</p>
+                                <a href="#" class="project-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="portfolio-item" data-category="digital">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-project">
+                            <span>Dijital Pazarlama</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">Dijital Pazarlama</span>
+                                <h3 class="project-title">Sosyal Medya Kampanyası</h3>
+                                <p class="project-desc">%200 etkileşim artışı sağlanan kampanya</p>
+                                <a href="#" class="project-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-project">
+                            <span>Landing Page</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">Web Tasarım</span>
+                                <h3 class="project-title">Landing Page</h3>
+                                <p class="project-desc">Yüksek dönüşüm oranlı landing page</p>
+                                <a href="#" class="project-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-project">
+                            <span>B2B Platform</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <span class="project-category">E-Ticaret</span>
+                                <h3 class="project-title">B2B E-Ticaret</h3>
+                                <p class="project-desc">Toptan satış e-ticaret platformu</p>
+                                <a href="#" class="project-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="portfolio-cta">
+                <a href="#iletisim" class="btn btn-outline">
+                    <span>Tüm Projeleri Görüntüle</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Müşteri Yorumları</span>
+                <h2 class="section-title">Müşterilerimiz Ne Diyor?</h2>
+            </div>
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                ESL Dijital ile çalışmak harika bir deneyimdi. Web sitemiz hem görsel açıdan
+                                çok etkileyici hem de SEO açısından mükemmel performans gösteriyor. Tavsiye ederim.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>AY</span>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Ahmet Yılmaz</h4>
+                                <span class="author-title">CEO, Tech Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Sosyal medya yönetimi konusunda beklentilerimin çok üzerinde bir hizmet aldım.
+                                Takipçi sayımız 3 ayda %150 arttı. Profesyonel ve ilgili bir ekip.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>MK</span>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Merve Kaya</h4>
+                                <span class="author-title">Pazarlama Müdürü, Fashion Brand</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                E-ticaret projemizde gösterdikleri özen ve uzmanlık için teşekkür ederiz.
+                                Satışlarımız ilk ayda %80 arttı. Kesinlikle tavsiye ediyorum.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>ED</span>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Emre Demir</h4>
+                                <span class="author-title">Kurucu, E-Store</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Kurumsal Web</div>
-                        <div class="portfolio-overlay">
-                            <h4>Kurumsal Web Sitesi</h4>
-                            <p>Elementor Pro Tasarım</p>
-                        </div>
+                <div class="testimonial-controls">
+                    <button class="control-btn prev" aria-label="Önceki">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">WordPress</span>
-                        <h3>Kurumsal Site</h3>
-                    </div>
+                    <button class="control-btn next" aria-label="Sonraki">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Meta Ads</div>
-                        <div class="portfolio-overlay">
-                            <h4>Sosyal Medya Kampanyası</h4>
-                            <p>Facebook & Instagram Ads</p>
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Blog</span>
+                <h2 class="section-title">Güncel Yazılarımız</h2>
+                <p class="section-description">
+                    Dijital dünya hakkında güncel bilgiler ve ipuçları.
+                </p>
+            </div>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="image-placeholder-blog">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
                         </div>
+                        <span class="blog-category">SEO</span>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Meta Reklamları</span>
-                        <h3>Reklam Kampanyası</h3>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">15 Ocak 2026</span>
+                            <span class="blog-read">5 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">2026 SEO Trendleri: Bilmeniz Gerekenler</h3>
+                        <p class="blog-excerpt">
+                            Yapay zeka ve ses aramaların yükselişiyle birlikte SEO stratejileri değişiyor...
+                        </p>
+                        <a href="#" class="blog-link">
+                            <span>Devamını Oku</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Grafik Tasarım</div>
-                        <div class="portfolio-overlay">
-                            <h4>Kurumsal Kimlik</h4>
-                            <p>Broşür & Kartvizit</p>
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="image-placeholder-blog">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
                         </div>
+                        <span class="blog-category">Sosyal Medya</span>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Grafik Tasarım</span>
-                        <h3>Kurumsal Tasarım Seti</h3>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">10 Ocak 2026</span>
+                            <span class="blog-read">4 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">Instagram Reels ile Etkileşimi Artırmanın Yolları</h3>
+                        <p class="blog-excerpt">
+                            Kısa video formatları sosyal medyada öne çıkıyor. İşte etkili Reels stratejileri...
+                        </p>
+                        <a href="#" class="blog-link">
+                            <span>Devamını Oku</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Blog Sitesi</div>
-                        <div class="portfolio-overlay">
-                            <h4>Kişisel Blog</h4>
-                            <p>Modern & Minimalist</p>
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="image-placeholder-blog">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
                         </div>
+                        <span class="blog-category">Web Tasarım</span>
                     </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">WordPress</span>
-                        <h3>Blog Platformu</h3>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">5 Ocak 2026</span>
+                            <span class="blog-read">6 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">Kullanıcı Deneyimini İyileştiren 10 Web Tasarım İpucu</h3>
+                        <p class="blog-excerpt">
+                            Ziyaretçilerin sitenizde daha uzun kalmasını sağlayacak pratik öneriler...
+                        </p>
+                        <a href="#" class="blog-link">
+                            <span>Devamını Oku</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image">Sosyal Medya</div>
-                        <div class="portfolio-overlay">
-                            <h4>Sosyal Medya Görselleri</h4>
-                            <p>Instagram & Facebook</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Grafik Tasarım</span>
-                        <h3>Sosyal Medya Paketi</h3>
-                    </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Projenizi Hayata Geçirmeye Hazır mısınız?</h2>
+                <p class="cta-description">
+                    Dijital hedeflerinize ulaşmak için hemen bizimle iletişime geçin.
+                    Ücretsiz danışmanlık hizmetimizden yararlanın.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#iletisim" class="btn btn-white">
+                        <span>Ücretsiz Teklif Alın</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+905551234567" class="btn btn-outline-white">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>Hemen Arayın</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -238,77 +889,123 @@
     <!-- Contact Section -->
     <section id="iletisim" class="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">İletişim</span>
-                <h2 class="section-title">Birlikte Çalışalım</h2>
-                <p class="section-description">Projeniz için benimle iletişime geçin. Size en kısa sürede geri dönüş yapacağım.</p>
-            </div>
-            <div class="contact-content">
+            <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h3>İletişim Bilgileri</h3>
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <div>
-                            <h4>Email</h4>
-                            <p>gulistan@example.com</p>
+                    <span class="section-badge">İletişim</span>
+                    <h2 class="section-title">Bizimle İletişime Geçin</h2>
+                    <p class="contact-description">
+                        Projeleriniz hakkında konuşmak, teklif almak veya sorularınızı
+                        iletmek için bizimle iletişime geçebilirsiniz.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Adres</h4>
+                                <p>Levent Mah. Büyükdere Cad. No:123<br>Beşiktaş, İstanbul</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        <div>
-                            <h4>Telefon</h4>
-                            <p>+90 XXX XXX XX XX</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telefon</h4>
+                                <p>+90 555 123 45 67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>E-posta</h4>
+                                <p>info@esldijital.com</p>
+                            </div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Behance">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="9" y1="9" x2="15" y2="15"></line>
-                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Adınız Soyadınız</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-posta Adresiniz</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Konu</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Gönder</button>
-                    <div class="form-message" id="formMessage"></div>
-                </form>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Adınız Soyadınız *</label>
+                                <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-posta Adresiniz *</label>
+                                <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefon Numaranız</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+90 5XX XXX XX XX">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">İlgilendiğiniz Hizmet</label>
+                                <select id="service" name="service">
+                                    <option value="">Seçiniz</option>
+                                    <option value="web">Web Tasarım</option>
+                                    <option value="seo">SEO</option>
+                                    <option value="social">Sosyal Medya</option>
+                                    <option value="ads">Dijital Reklam</option>
+                                    <option value="ecommerce">E-Ticaret</option>
+                                    <option value="branding">Marka Kimlik</option>
+                                    <option value="other">Diğer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Projeniz hakkında bize bilgi verin..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Mesaj Gönder</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -316,9 +1013,107 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Gülistan Yavuz. Tüm hakları saklıdır.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-text">ESL</span>
+                        <span class="logo-sub">dijital</span>
+                    </a>
+                    <p class="footer-description">
+                        Dijital dünyada markanızı büyütmek için yanınızdayız.
+                        Modern çözümler, sonuç odaklı stratejiler.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#hizmetler">Hizmetler</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#projeler">Projeler</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#hizmetler">Web Tasarım</a></li>
+                        <li><a href="#hizmetler">SEO Optimizasyonu</a></li>
+                        <li><a href="#hizmetler">Sosyal Medya</a></li>
+                        <li><a href="#hizmetler">Dijital Reklam</a></li>
+                        <li><a href="#hizmetler">E-Ticaret</a></li>
+                        <li><a href="#hizmetler">Marka Kimlik</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Levent, Beşiktaş, İstanbul</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>+90 555 123 45 67</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>info@esldijital.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ESL Dijital. Tüm hakları saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Koşulları</a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Yukarı Git">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
